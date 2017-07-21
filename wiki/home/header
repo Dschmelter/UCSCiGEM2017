@@ -1,0 +1,517 @@
+
+<html>
+
+<head>
+
+ 
+
+  <!-- External scripts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600'
+ rel='stylesheet' type='text/css'>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- Functionallity and behaviour JS -->
+  <script>
+
+    $(document).ready(function(){
+
+      //Loading screen functionallity
+      $('.loading').animate(
+          {opacity:0},
+          500,
+          function(){
+            $('.loading').attr("style", "display:none");
+          }
+      );
+
+      //Height responsiveness
+      $(window).resize(function() {
+          wheight = $(window).height();
+          $('.container').attr("style","height:"+(wheight)+"px;background-size:cover;");
+          $('.team-member-container').attr("style","height:"+wheight/2.7+"px;");
+      });
+
+      $(window).trigger('resize');
+
+      //Menu moveto container on item click functionallity
+      $('.menu-item').on('click', function(){
+          $('.menu-item').removeClass('subselected');
+          $(this).addClass('subselected');
+          if($(this).attr("data")=="#top"){
+              $('html, body').animate({
+                  scrollTop: 0
+              }, 1000);
+          }else{
+              $('html, body').animate({
+                  scrollTop: $($(this).attr("data")).offset().top-70
+              }, 1000);
+          }
+      });
+
+      //Hover of team members
+      $('.team-member-container').on('mouseenter', function(){
+        $(this).children('.team-member-photo').attr("style", "background-image:url('"+$(this).attr("hover")+"');");
+        $(this).on('mouseleave', function(){
+          $(this).children('.team-member-photo').attr('style', "background-image:url('"+$(this).attr("data")+"');");
+        });
+      });
+
+    });
+    
+  </script>
+
+  <style>
+
+
+#sideMenu, #top_title {display:none;}
+#content { padding:0px; width:90%; margin-top:-7px; margin-left:5%;, margin-right: 5%}
+body {background-color:white; }
+#bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+
+
+    body,
+    html{
+      margin: 0;
+      padding:0;
+      font-family: font-family: 'Yanone Kaffeesatz', sans-serif;
+    }
+
+    /* REMOVE UNWANTED ELEMENTS AND STYLE OTHERS */
+    .firstHeading{
+      display:none;
+    }
+    #top-section{
+      background:#48af5d;
+      margin-left:0 !important;
+      width:100%;
+      left:0;
+    }
+
+
+    /* LOADING SCREEN */
+    .loading{
+      position:fixed;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+
+      z-index:5;
+
+      background-color:#555;
+      color:#fff;
+      text-align: center;
+    }
+    .loading p{
+      position: relative;
+      width:100%;
+      height:10%;
+      top:45%;
+      left:0;
+    }
+
+    /* MENU STYLING */
+    .menu{
+      position:fixed;
+      width:100%;
+      height:56px;
+      top:14px;
+      background-color: #47a3da;
+
+      z-index:4;
+
+      border-collapse: collapse;
+      text-align:center;
+    }
+    .menu tr td{
+      text-align: center;
+      vertical-align: middle;
+
+      font-weight: 700;
+      font-size:16px;
+      color:#fff;
+      width:7%;
+    }
+    .menu tr td.menu-item:hover{
+      background-color:#258ecd;
+      cursor: pointer;
+    }
+    .subselected{
+      background-color: #258ecd;
+    }
+
+    /* CONTAINERS STYLING */
+    .container{
+      position:relative;
+      width:100%;
+      top:50px;
+    }
+    .container .subcontainer{
+      position:absolute;
+      width:95%;
+      height:90%;
+      top:5%;
+      left:2.5%;
+    }
+    #top{
+      background-size: cover;
+     
+      overflow:hidden;
+    }
+
+    /* TEAM MEMBERS CARDS STYLING */
+    .team-member-container{
+      position:relative;
+      width:14%;
+      margin-left:2.28%;
+
+      float:left;
+    }
+    .team-member-container:hover{
+      cursor:pointer;
+    }
+    .row2{
+      top:4%;
+    }
+    .team-member-container .team-member-photo{
+      position:relative;
+      width:100%;
+      height:85%;
+      top:0;
+      left:0;
+      background-size: cover;
+    }
+    .team-member-container .team-member-footer{
+      position:relative;
+      width:100%;
+      height:15%;
+      top:0;
+      left:0;
+
+      border:none;
+      border-collapse: collapse;
+      background-color: #47a3da;
+      color:#fff;
+
+      text-align: center;
+      vertical-align: middle;
+    }
+
+body { 
+    padding-top: 110px; 
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.navbar-fixed-top {
+	background: #fff;
+	filter: none !important;
+	box-shadow: 0 2px 15px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0 2px 15px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 0 2px 15px rgba(0,0,0,0.25);
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+
+}
+
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+
+
+
+.faceBot{
+   background: #202020;
+}
+
+@font-face {
+  font-family: 'Open Sans', Arial;;
+ }
+
+body
+{
+    font-family: 'Open Sans', Arial;
+}
+
+ul.nav a{
+  color: gray;
+  background-color: transparent;
+  height: 100%;
+  position: relative;
+}
+
+ul.nav a:hover{
+  color: gray;
+  background-color: transparent;
+  height: 100%;
+  position: relative;
+}
+
+h2 {
+   color:green;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+.menu-item{
+  height: 75px;
+}
+
+li.menu-item{
+  background: transparent !important;
+}
+
+
+
+.green-effect{
+  display: none;
+  background-color: #4AAF51;
+  opacity: 1;
+  color: #FFF;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  border-color: #288D30;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  right: 0px;
+}
+
+.logo {
+margin-top: 100px;
+
+}
+
+a:hover .green-effect{
+  display: inherit;
+}
+
+.invertir:hover {
+  -webkit-filter: invert(100%);
+}
+
+dropdown-toggle {
+width: 10%;
+
+
+  
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<div class="navbar navbar-fixed-top" style="margin-top:15px">
+   <nav class="navbar-inner">
+   
+  <div class="row-sm-height">
+  
+  <div class="col-sm-2"><a href="http://2017.igem.org/Team:UCSC"><img class="logo" src="http://2017.igem.org/wiki/images/d/d4/Logo_edit_new.png" height="60"  width="auto" ></a></div>
+
+
+
+
+
+ 
+
+   <div class="col-md-10" >
+      <ul class="nav navbar-nav" style="margin-top:10px">
+     <li>
+     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                 Team<b class="caret"></b>             
+</a>
+                    <ul class="dropdown-menu multi-level">
+                        <li><a href="http://2017.igem.org/Team:UCSC/Team">Meet the Team </a></li>
+                        <li><a href="">Attributions </a></li>
+                     
+                    </ul>
+                </li>
+
+
+
+ <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Project <b class="caret"></b></a>
+                    <ul class="dropdown-menu multi-level"  >
+ 
+<li><a href="">Project- Home</a></li>
+<li class="divider"></li>
+               <li><a href="">Safety</a></li>
+                        <li><a href="">Sense</a></li>
+                        <li><a href="">Express</a></li>
+               
+                  
+                        <li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Keep Fresh</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="">Applied Design</a></li>
+                               
+                                <li><a href="">Business Plan</a></li>
+                            </ul>
+                        </li>
+
+                          <li><a href="">Notebook</a></li>
+                        <li><a href="">Interlab</a></li>
+ <li><a href="">Protocols</a></li>
+                    </ul>
+
+
+                </li>
+
+
+
+
+
+       
+
+
+         <li>
+     <a href="" class="dropdown-toggle" data-toggle="dropdown">
+
+                 Human Practices<b class="caret"></b>             
+</a>
+                    <ul class="dropdown-menu multi-level">
+ <li><a href="">Human Practices - Summary</a></li>
+<li class="divider"></li>
+                        <li><a href="">Integrated Human Practices</a></li>
+                        <li><a href="">Outreach</a></li>
+<li><a href="">Theory of Knowledge</a></li>
+                       
+                    </ul>
+                </li>
+
+
+        <li class="menu-item">
+          <a href="">
+            <span>Collaboration</span>
+            <span class="green-effect"></span>
+          </a>
+</li>
+
+    
+
+ 
+
+                <li>
+              
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                 Modelling <b class="caret"></b>             
+</a>
+                    <ul class="dropdown-menu multi-level">
+                          <li><a href="">Modelling - Home</a></li>
+<li class="divider"></li>
+                        <li><a href="">Protein Modelling <br> Etnr1</a></li>
+                        <li><a href="">Protein Modelling <br> Etnr2</a></li>
+                        <li><a href="">Internal Cellular Model</a></li>
+                        
+                        <li><a href="">Macroscopic Diffusion Model</a></li>
+                       
+                      
+                    </ul>
+                </li>
+
+       <li>
+
+  <li>
+              
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                 Software <b class="caret"></b>             
+</a>
+                    <ul class="dropdown-menu multi-level">
+                       <li><a href="">Software - Home</a></li>
+<li class="divider"></li>
+                        <li><a href="">Primer Design App</a></li>
+                        <li><a href="">SmartPhone App </a></li>
+                      
+                       
+                      
+                    </ul>
+                </li>
+
+  <li>
+     <a href="" class="dropdown-toggle" data-toggle="dropdown">
+
+                Achievements<b class="caret"></b>             
+</a>
+                    <ul class="dropdown-menu multi-level">
+                        <li><a href=""> Parts</a></li>
+                        <li><a href="">Medals</a></li>
+
+                    
+                    </ul>
+                </li>
+
+
+
+      </ul>
+</div>
+   </nav>
+</div>
+
+
+<html>
