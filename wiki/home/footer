@@ -1,0 +1,58 @@
+<html>
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:200,80' rel='stylesheet' type='text/css'>
+<style>
+#mfooter {
+  position:absolute;
+  width:100%;
+  height:200px;
+  margin-left : 0;
+  margin-right : 0;
+  bottom:-200px;
+  color:white;
+  background:rgb(193,185,184);
+}
+.footbox {
+ 
+  float:left;
+}
+.footbox a {
+  color:white;
+}
+</style>
+
+<body>
+<div style="clear: both;"></div>
+
+<div id=mfooter> 
+  <div class="footbox" style="margin-left:5%;margin-top:0.5%;width:10%;">
+   <a href="http://2017.igem.org/Team:UCSC">
+    <img src="http://2017.igem.org/wiki/images/d/d4/Logo_edit_new.png" height="130px"/>
+   </a>
+  </div>
+  <div class="footbox" style="margin-left:5%;margin-top:1%;width: 20%; margin-right: 5%;">
+   
+    <b>Jack Baskin School of Engineering</b></br>
+    The University of California,</br>
+    Santa Cruz</br>
+    1156 High Street, Santa Cruz, California</br>
+    
+   </div>
+  <div class="footbox" style="margin-left:0%;margin-top:3%;width:10%;margin-right:5%;">
+   <a href="https://www.soe.ucsc.edu">
+    <img src="http://2017.igem.org/wiki/images/e/e7/Bsoe.png" height="80px"/>
+   </a>
+  </div>
+ 
+  
+  <div class="footbox" style="float:left;margin-top:2%;margin-right:0%; width:10%; margin-left:15%;">
+   <a href="http://2017.igem.org/Main_Page">
+    <img src="http://2014.igem.org/wiki/images/b/bc/PB_footeriGEMofficial.png" height="100px"/>
+   </a>
+  </div>
+  <div style="clear: both;"></div>  
+  <center>
+    
+  </center>
+</div>
+</body>
+</html>
