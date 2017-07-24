@@ -49,6 +49,13 @@
     <img src="http://2014.igem.org/wiki/images/b/bc/PB_footeriGEMofficial.png" height="100px"/>
    </a>
   </div>
+  
+    <div class="footbox" style="float:left;margin-top:2%;margin-right:0%; width:10%; margin-left:15%;">
+   <a href="https://www.facebook.com/ucscigem/">
+    <img src="http://2017.igem.org/wiki/images/b/b9/FBicon.png" height="100px"/>
+   </a>
+  </div>
+  
   <div style="clear: both;"></div>  
   <center>
     
